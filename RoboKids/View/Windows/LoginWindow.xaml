@@ -1,0 +1,108 @@
+﻿<Window x:Class="RoboKids.View.Windows.LoginWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:RoboKids.View.Windows"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        mc:Ignorable="d"
+        Title="AuthtorizationWindow" 
+        Height="450" 
+        Width="800"
+        WindowStartupLocation="CenterScreen"
+        WindowStyle="None"
+        ResizeMode="NoResize"
+        Background="Transparent"
+        AllowsTransparency="True"
+        FontFamily="Century Gothic">
+    <Border BorderThickness="1"
+            Height="450"
+            Width="800"
+            ClipToBounds="True">
+        <Border.Background>
+            <SolidColorBrush Color="White"/>
+        </Border.Background>
+
+        <Border.Clip>
+            <RectangleGeometry RadiusX="20"
+                               RadiusY="20"
+                               Rect="0, 0, 800, 450"/>
+        </Border.Clip>
+
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="0.6*"/>
+            </Grid.ColumnDefinitions>
+
+            <Grid>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="Robo" 
+                               FontSize="18" 
+                               Foreground="#009688"
+                               FontWeight="Bold"
+                               Margin="10, 5, 0, 0"/>
+                    <TextBlock Text="Kids" 
+                               FontSize="18" 
+                               FontWeight="Bold"
+                               Margin="0, 5, 0, 0"/>
+                </StackPanel>
+                <StackPanel HorizontalAlignment="Center" 
+                            VerticalAlignment="Center">
+                    <TextBlock Text="Войдите в свой аккаунт!"
+                               Foreground="#009688"
+                               FontWeight="Bold"
+                               FontSize="22"
+                               HorizontalAlignment="Center"/>
+                    <TextBox materialDesign:HintAssist.Hint="Login" 
+                             materialDesign:HintAssist.Foreground="#009688" 
+                             VerticalContentAlignment="Center"
+                             FontSize="20"
+                             Width="200"
+                             Margin="0, 10, 0, 0"
+                             x:Name="LoginTB"/>
+                    <PasswordBox materialDesign:HintAssist.Hint="Password" 
+                                 materialDesign:HintAssist.Foreground="#009688" 
+                                 VerticalContentAlignment="Center"
+                                 FontSize="20"
+                                 Width="200"
+                                 Margin="0, 10, 0, 0"
+                                 x:Name="PasswordTB"/>
+                    <Button Width="135"
+                            Margin="0, 20, 0, 0"
+                            Content="Войти"
+                            Click="Login"/>
+                </StackPanel>
+            </Grid>
+
+            <Grid Grid.Column="1">
+                <Grid.Background>
+                    <SolidColorBrush Color="#009688"/>
+                </Grid.Background>
+                <StackPanel HorizontalAlignment="Center" 
+                            VerticalAlignment="Center"
+                            Width="250">
+                    <TextBlock Text="Добро пожаловать!"
+                               Foreground="White"
+                               FontWeight="Bold"
+                               FontSize="22"
+                               HorizontalAlignment="Center"/>
+                    <TextBlock Text="Заполните информацию о себе и присоединяйтесь!"
+                               Foreground="White"
+                               FontSize="16"
+                               TextWrapping="Wrap"
+                               TextAlignment="Center"
+                               HorizontalAlignment="Center"
+                               Margin="0, 10, 0, 0"/>
+                    <Button Background="Transparent"
+                            BorderBrush="White"
+                            Content="Создать аккаунт" 
+                            Foreground="White"
+                            Margin="0, 10, 0, 0"
+                            Width="200"
+                            Click="ToRegister"/>
+                </StackPanel>
+            </Grid>
+        </Grid>
+    </Border>
+</Window>
